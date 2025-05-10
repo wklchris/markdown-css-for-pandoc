@@ -1,0 +1,255 @@
+:root {
+    --gray-font-color: #59636e;
+    --gray-line-color: #dfe4e9;
+    /* Link colors */
+    --link-color: #0969da;
+    --link-visited-color: #b3007a;
+    /* Code colors */
+    --code-background-color: #f0f1f2;
+    --codeblock-background-color: #f6f8fa;
+    /* Quote colors */
+    --blockquote-border-color: #d1d9e0;
+    /* Table colors */
+    --table-border-color: #d1d9e0;
+    /* Alert/Admonition colors */
+    --admonition-color: #d1d9e0;
+    --caution-color: #cf222e;
+    --important-color: #8250df;
+    --note-color: #0959da;
+    --tip-color: #1a7f37;
+    --warning-color: #9a6700;
+}
+
+body {
+    font-size: 16px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+    line-height: 1.5;
+    margin: 0 auto;
+    max-width: 60em;
+    padding: 50px;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    border-bottom: 1px solid var(--gray-line-color);
+    padding-bottom: 0.3em;
+    font-weight: 600;
+    /* semi-bold */
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+}
+
+h3 {
+    font-size: 1.25em;
+}
+
+h4 {
+    font-size: 1em;
+}
+
+h5 {
+    font-size: 0.875em;
+}
+
+h6 {
+    font-size: 0.85em;
+}
+
+/* Links & Footnote sup */
+a {
+    color: var(--note-color);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: var(--link-visited-color);
+}
+
+a.footnote-ref {
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+}
+
+a.footnote-ref sup {
+    margin-left: 0.2em;
+    font-size: 75%;
+    position: relative;
+    vertical-align: baseline;
+    top: -0.5em;
+}
+
+a.footnote-ref sup::before {
+    content: "[";
+}
+
+a.footnote-ref sup::after {
+    content: "]";
+}
+
+/* Quote & Code */
+blockquote {
+    color: var(--gray-font-color);
+    border-left: 0.25em solid var(--blockquote-border-color);
+    padding: 0 1em;
+    margin: 0 0.5em;
+}
+
+code {
+    background-color: var(--code-background-color);
+    padding: 0.1em 0.3em;
+    border-radius: 3px;
+}
+
+pre {
+    background-color: var(--codeblock-background-color);
+    padding: 1rem;
+    overflow: auto;
+    border-radius: 6px;
+    font-size: 90%;
+    word-break: normal;
+    word-wrap: normal;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+}
+
+svg {
+    max-width: 100%;
+}
+
+/* Tables */
+table {
+    max-width: 100%;
+    width: max-content;
+    overflow: auto;
+    display: block;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 6px 13px;
+    border: 1px solid var(--table-border-color)
+}
+
+table th {
+    font-weight: 600;
+    /* semi-bold */
+}
+
+/* Paragraphs & Lists */
+p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+}
+
+ul li {
+    margin-top: 0.25em;
+    margin-bottom: 0.25em;
+}
+
+/* Alert (Admonition) */
+div.caution,
+div.important,
+div.note,
+div.tip,
+div.warning {
+    border-left: 0.25rem solid var(--admonition-color);
+    padding: 0.5rem 1rem;
+    margin-bottom: 1rem;
+}
+
+:is(div.caution,
+    div.important,
+    div.note,
+    div.tip,
+    div.warning) .title {
+    font-weight: bold;
+    font-size: large;
+}
+
+:is(div.caution,
+    div.important,
+    div.note,
+    div.tip,
+    div.warning) .title p:first-child::before {
+    margin-right: 0.5rem;
+}
+
+div.caution {
+    border-left-color: var(--caution-color);
+}
+
+div.caution .title {
+    color: var(--caution-color);
+}
+
+div.caution .title p:first-child::before {
+    /* ❗ Exclamation Mark */
+    content: "\0021";
+}
+
+div.important {
+    border-left-color: var(--important-color);
+}
+
+div.important .title {
+    color: var(--important-color);
+}
+
+div.important .title p:first-child::before {
+    /* ⚑ Black Flag */
+    content: "\2691";
+}
+
+div.note {
+    border-left-color: var(--note-color);
+}
+
+div.note .title {
+    color: var(--note-color);
+}
+
+div.note .title p:first-child::before {
+    /* ⓘ Circle Small Letter */
+    content: "\24D8";
+}
+
+div.tip {
+    border-left-color: var(--tip-color);
+}
+
+div.tip .title {
+    color: var(--tip-color);
+}
+
+div.tip .title p:first-child::before {
+    /* 💡 Electric Light Bulb */
+    content: "\1F4A1";
+}
+
+div.warning {
+    border-left-color: var(--warning-color);
+}
+
+div.warning .title {
+    color: var(--warning-color);
+}
+
+div.warning .title p:first-child::before {
+    /* ⚠ Warning Sign */
+    content: "\26A0";
+}
