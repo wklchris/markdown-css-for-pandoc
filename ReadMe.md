@@ -12,10 +12,18 @@ Make sure that you have installed [Pandoc](https://github.com/jgm/pandoc/release
 Download the [gfm.css](./gfm.css) file from this repository. Run the following command in terminal to convert `input.md` to `output.html`:
 
 ```
-pandoc -s -c markdown-gf.css -o output.html input.md
+pandoc input.md -s -c gfm.css -f gfm --mathjax -o output.html 
 ```
 
 The CSS is tested with Pandoc version 3.6.4.
+
+---
+
+*For developer testing only*: 
+
+```
+pandoc test.md -s -c gfm.css -f gfm --mathjax -o test.html
+```
 
 
 ## License
