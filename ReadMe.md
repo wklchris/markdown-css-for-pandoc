@@ -26,6 +26,13 @@ pandoc test.md -s -c gfm.css -f gfm --mathjax -o test.html
 ```
 
 
+## Known differences with the original GFM
+
+- Max width: Set to 60em
+- Font size for codes (`--code-font-size`): Use 90\%, larger than 85\% 
+- Icons of alerts (admonitions): Unicode symbols are used instead of SVG icons
+
+
 ## License
 
 [MIT](./LICENSE)

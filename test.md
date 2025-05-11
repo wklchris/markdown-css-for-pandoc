@@ -61,6 +61,16 @@
 
 ### 普通代码块
 
+不带语法高亮：
+
+```
+int main() {
+    return 0;
+}
+```
+
+带语法高亮：
+
 ```python
 def hello():
     print("Hello, World!")
