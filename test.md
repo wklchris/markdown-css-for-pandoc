@@ -72,7 +72,10 @@ int main() {
 带语法高亮：
 
 ```python
+from pathlib import Path
+
 def hello():
+    # Function comments
     print("Hello, World!")
 ```
 
@@ -137,5 +140,13 @@ A = \begin{pmatrix}
 \end{pmatrix}
 $$
 
+## 11. 其他
+
+折叠：
+
+<details><summary>标题：单击以展开/隐藏并查看详细内容</summary>
+这里是展开后的详细内容。
+
+</details>
 
 [gfm-css]: https://github.com/wklchris/markdown-css-for-pandoc

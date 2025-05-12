@@ -1,21 +1,23 @@
 :root {
     --gray-font-color: #59636e;
     --gray-line-color: #dfe4e9;
+    /* Border colors: Quote, Table, etc. */
+    --border-basic-color: #d1d9e0;
+    --light-gray-basic: #f6f8fa;
+    --medium-gray-basic: #b6b8ba;
+    /* Horizontal line color */
+    --hr-color: #d1d9e0;
     /* Link colors */
     --link-color: #0969da;
     --link-visited-color: #b3007a;
     /* Code styles */
-    --code-font-size: 90%;
+    --code-font-size: small;
     --code-monospace-font: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
     --code-background-color: #f0f1f2;
     --codeblock-face-color: #1f2328;
     --codeblock-background-color: #f6f8fa;
-    /* Horizontal line color */
-    --hr-color: #d1d9e0;
-    /* Quote colors */
-    --blockquote-border-color: #d1d9e0;
     /* Table colors */
-    --table-border-color: #d1d9e0;
+    --table-background-color: #f6f8fa;
     /* Alert/Admonition colors */
     --admonition-color: #d1d9e0;
     --caution-color: #cf222e;
@@ -33,6 +35,10 @@ body {
     max-width: 60em;
     padding: 50px;
     word-wrap: break-word;
+}
+
+body> :last-child {
+    margin-bottom: 0;
 }
 
 /* Headings */
@@ -76,7 +82,7 @@ h6 {
     font-size: 0.85em;
 }
 
-/* Links & Footnote sup */
+/* Links & Footnotes */
 a {
     color: var(--note-color);
     text-decoration: underline;
@@ -107,10 +113,20 @@ a.footnote-ref sup::after {
     content: "]";
 }
 
+section.footnotes {
+    font-size: small;
+    color: var(--gray-font-color);
+}
+
+section.footnotes>hr:first-child {
+    height: 1px;
+    color: var(--border-basic-color);
+}
+
 /* Quote & Code */
 blockquote {
     color: var(--gray-font-color);
-    border-left: 0.25em solid var(--blockquote-border-color);
+    border-left: 0.25em solid var(--border-basic-color);
     padding: 0 1em;
     margin: 0 0.5em;
     margin-bottom: 1rem;
@@ -126,10 +142,16 @@ code {
     border-radius: 6px;
 }
 
+div.sourceCode {
+    background-color: var(--codeblock-background-color);
+    overflow: auto;
+}
+
 code.sourceCode,
 pre code {
     background-color: var(--codeblock-background-color);
     color: var(--codeblock-face-color);
+    padding: 0;
 }
 
 pre {
@@ -144,17 +166,15 @@ pre {
     min-height: 52px;
     padding: 1rem;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 1rem;
     border-radius: 6px;
 }
 
 /* Images */
-img {
+:is(img, svg) {
     max-width: 100%;
-}
-
-svg {
-    max-width: 100%;
+    vertical-align: middle;
+    border-style: none;
 }
 
 /* Tables */
@@ -166,15 +186,24 @@ table {
     border-collapse: collapse;
 }
 
+
 table th,
 table td {
     padding: 6px 13px;
-    border: 1px solid var(--table-border-color)
+    border: 1px solid var(--border-basic-color)
 }
 
 table th {
     font-weight: 600;
     /* semi-bold */
+}
+
+table tr {
+    background-color: inherit;
+}
+
+table tr:nth-child(2n) {
+    background-color: var(--table-background-color);
 }
 
 /* Paragraphs, Horizontal lines & Lists */
@@ -193,9 +222,51 @@ hr {
     overflow: hidden;
 }
 
-ul li {
+ul,
+ol {
+    padding-left: 2em;
+    padding-right: 0;
+    padding-inline-start: 2em;
+    padding-inline-end: 0;
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+ul ul,
+ol ol {
+    margin-bottom: 0;
+}
+
+:is(ul, ol) li {
     margin-top: 0.25em;
-    margin-bottom: 0.25em;
+}
+
+:is(ul, ol) :is(ul, ol) {
+    margin: 0;
+    margin-top: 0.25em;
+}
+
+/* Collapse (Summary & Details)*/
+details {
+    display: block;
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    border-left: 0.25rem solid var(--admonition-color);
+    padding-left: 0.5rem;
+}
+
+details summary {
+    width: fit-content;
+    padding: 0.25em;
+    padding-left: 0.5em;
+    border-radius: 3px;
+}
+
+details summary:hover,
+details[open] summary {
+    background-color: var(--medium-gray-basic);
+    cursor: pointer;
 }
 
 /* Alert (Admonition) */
@@ -234,7 +305,7 @@ div.warning {
     div.important,
     div.note,
     div.tip,
-    div.warning) > :last-child {
+    div.warning)> :last-child {
     margin-bottom: 0;
 }
 
