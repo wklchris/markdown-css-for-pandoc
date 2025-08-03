@@ -5,38 +5,35 @@ This repository provides github-flavor Markdown CSS files for the doc converting
 The author of this repository imitates the Github-flavor Markdown (GFM) format of these CSS files. These files are not from Github official and the format is not guaranteed to be completely restored.
 
 Table of contents:
+- [Online Example](#online-example)
 - [Using Guide](#using-guide)
 - [Known differences with the original GFM](#known-differences-with-the-original-gfm)
 - [License](#license)
 
 
+## Online Example
+
+A rendered HTML example is online at [the Example webpage of this repo](https://wklchris.github.io/markdown-css-for-pandoc/example.html). The webpage is rendered by the similar command introduced in the following [Using Guide](#using-guide) section.
+
+
 ## Using Guide
 
-Make sure that you have installed [Pandoc](https://github.com/jgm/pandoc/releases).
+Installation:
 
-Download files [gfm.css](./gfm.css) and [gfm-hl.theme](./gfm-hl.theme) from this repository.
+- Make sure that you have installed [Pandoc](https://github.com/jgm/pandoc/releases).
+- Download files [gfm.css](./gfm.css) and [gfm-hl.theme](./gfm-hl.theme) from this repository. 
 
-Run the following command in terminal to convert `input.md` to `output.html`:
+To convert Markdown to HTML:
+
+1. **Pandoc command**: Run the following command in terminal to convert `input.md` to `output.html`:
 
 ```
 pandoc input.md -s -c gfm.css -f gfm --highlight-style gfm-hl.theme --mathjax -o output.html 
 ```
 
-* `-s`: Generate standalone file
-* `-c`: Specify CSS
-* `--highlight-style`: Specify highlight theme file
-* `--mathjax`: Use [MathJax](https://www.mathjax.org/) to render LaTeX math equations
-* `-o`: Write output to a specific file
+2. **Copy the CSS file**: Keep the file `gfm.css` with your output HTML so that the styling can work.
 
 CSS/theme files provided in this repository are tested under Pandoc version 3.6.4.
-
----
-
-*For developer testing only*: 
-
-```
-pandoc test.md -s -c gfm.css -f gfm --highlight-style gfm-hl.theme --mathjax -o test.html
-```
 
 
 ## Known differences with the original GFM
@@ -60,8 +57,8 @@ pandoc -o gfm-hl.theme --print-highlight-style pygments
 ```
 
 *Table of Modified Highlighting Styles from the Default Pygments Style*
-| Styles | Properties | Current Values | Original Values |
-| :---: | :--- | :---: | :---: |
+| Styles (HTML Class) | Properties | Current Values | Original Values |
+| :--- | :--- | :---: | :---: |
 | Attribute (at) | text-color | `#7d9029` | `#6639ba` |
 | BuiltIn (bu), Import (im) | text-color | `#6639ba` | `#008000` |
 | Annotation, Comment (co), CommentVar, Information, Warning | text-color | `#59636e` | `#60a0b0` |
@@ -70,6 +67,7 @@ pandoc -o gfm-hl.theme --print-highlight-style pygments
 | \^ Char, SpecialChar, String (st), VerbatimString | text-color | `#0e7615` | `#4070a0` |
 | Operator (op) | text-color | `#6639ba` | `#666666` |
 | Variable (va) | text-color | `#0550ae` | `#19177c` |
+
 \^ *Different taste from GFM.*
 
 ## License
