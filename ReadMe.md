@@ -1,5 +1,7 @@
 # Markdown CSS for Pandoc
 
+🌐 *English*, [中文](./ReadMe-cn.md)
+
 This repository provides github-flavor Markdown CSS files for the doc converting tool [Pandoc](https://github.com/jgm/pandoc).
 
 The author of this repository imitates the Github-flavor Markdown (GFM) format of these CSS files. These files are not from Github official and the format is not guaranteed to be completely restored.

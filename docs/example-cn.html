@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <title>example</title>
+  <title>example-cn</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -92,233 +92,223 @@
   type="text/javascript"></script>
 </head>
 <body>
-<h1 id="gfm-test-document">GFM Test Document</h1>
-<p>🌐 <em>English</em>, <a href="./example-cn.html">中文</a></p>
-<p>This document tests all supported GitHub-Flavored Markdown (GFM)
-syntax features and their rendering results in HTML for the <a
+<h1 id="gfm-测试文档">GFM 测试文档</h1>
+<p>🌐 <em>中文</em>, <a href="./example.html">English</a></p>
+<p>此文档测试 <a
 href="https://github.com/wklchris/markdown-css-for-pandoc">wklchris/markdown-css-for-pandoc</a>
-repository.</p>
-<p>This is an illustrative webpage but not a user guide. For the user
-guide, see <a
-href="https://github.com/wklchris/markdown-css-for-pandoc#using-guide">ReadMe
-in the repo</a>.</p>
+仓库支持的所有 GitHub Flavored Markdown 语法功能及其 HTML 渲染结果。</p>
+<p>这是一份用于展示的页面，而不是用户指南。要阅读使用指南，请访问 <a
+href="https://github.com/wklchris/markdown-css-for-pandoc#using-guide">仓库中的
+ReadMe</a> 文件。</p>
 <hr />
-<p>Table of Contents:</p>
 <ul>
-<li><a href="#1-title-examples">1. Title Examples</a></li>
-<li><a href="#2-inline-markers">2. Inline Markers</a></li>
-<li><a href="#3-footnotes">3. Footnotes</a></li>
-<li><a href="#4-blockquotes">4. Blockquotes</a></li>
-<li><a href="#5-alerts-admonitions">5. Alerts (Admonitions)</a></li>
-<li><a href="#6-code-blocks">6. Code Blocks</a>
+<li><a href="#1-标题示例">1. 标题示例</a></li>
+<li><a href="#2-行内标记">2. 行内标记</a></li>
+<li><a href="#3-脚注">3. 脚注</a></li>
+<li><a href="#4-引用块">4. 引用块</a></li>
+<li><a href="#5-警示块-alerts">5. 警示块 (Alerts)</a></li>
+<li><a href="#6-代码块">6. 代码块</a>
 <ul>
-<li><a href="#regular-code-block">Regular Code Block</a></li>
-<li><a href="#inline-code">Inline Code</a></li>
+<li><a href="#普通代码块">普通代码块</a></li>
+<li><a href="#行内代码">行内代码</a></li>
 </ul></li>
-<li><a href="#7-links">7. Links</a></li>
-<li><a href="#8-lists">8. Lists</a>
+<li><a href="#7-超链接">7. 超链接</a></li>
+<li><a href="#8-列表">8. 列表</a>
 <ul>
-<li><a href="#unordered-list">Unordered List</a></li>
-<li><a href="#ordered-list">Ordered List</a></li>
-<li><a href="#task-list">Task List</a></li>
+<li><a href="#无序列表">无序列表</a></li>
+<li><a href="#有序列表">有序列表</a></li>
+<li><a href="#任务列表">任务列表</a></li>
 </ul></li>
-<li><a href="#9-figures">9. Figures</a></li>
-<li><a href="#10-mathematical-formulas">10. Mathematical
-Formulas</a></li>
-<li><a href="#11-misc">11. Misc</a>
+<li><a href="#9-图表">9. 图表</a></li>
+<li><a href="#10-数学公式">10. 数学公式</a></li>
+<li><a href="#11-其他">11. 其他</a>
 <ul>
-<li><a href="#collapsable-details">Collapsable
+<li><a href="#可折叠-details">可折叠
 <code>&lt;details&gt;</code></a></li>
 </ul></li>
 </ul>
-<h2 id="1-title-examples">1. Title Examples</h2>
+<h2 id="1-标题示例">1. 标题示例</h2>
 <h1 id="h1-">H1 <!-- omit in toc --></h1>
 <h2 id="h2-">H2 <!-- omit in toc --></h2>
 <h3 id="h3-">H3 <!-- omit in toc --></h3>
 <h4 id="h4-">H4 <!-- omit in toc --></h4>
 <h5 id="h5-">H5 <!-- omit in toc --></h5>
 <h6 id="h6-">H6 <!-- omit in toc --></h6>
-<h2 id="2-inline-markers">2. Inline Markers</h2>
+<h2 id="2-行内标记">2. 行内标记</h2>
 <ul>
-<li><strong>Bold</strong>: <code>**bold**</code> or
-<code>__bold__</code></li>
-<li><em>Italic</em>: <code>*italic*</code> or <code>_italic_</code></li>
-<li><del>Strikethrough</del>: <code>~~strikethrough~~</code></li>
-<li>Superscript: X<sup>2</sup>:
-<code>X&lt;sup&gt;2&lt;/sup&gt;</code></li>
-<li>Subscript: H<sub>2</sub>O:
-<code>H&lt;sub&gt;2&lt;/sub&gt;O</code></li>
-<li>Underline:
+<li><strong>粗体</strong>：<code>**粗体**</code> 或
+<code>__粗体__</code></li>
+<li><em>斜体</em>：<code>*斜体*</code> 或 <code>_斜体_</code></li>
+<li><del>删除线</del>：<code>~~删除线~~</code></li>
+<li>上标：X<sup>2</sup>：<code>X&lt;sup&gt;2&lt;/sup&gt;</code></li>
+<li>下标：H<sub>2</sub>O：<code>H&lt;sub&gt;2&lt;/sub&gt;O</code></li>
+<li>下划线：
 <ul>
-<li><u>underline with u tag</u>:
-<code>&lt;u&gt;underline with u tag&lt;/u&gt;</code></li>
-<li><ins>underline with ins tag</ins>:
-<code>&lt;ins&gt;underline with ins tag&lt;/ins&gt;</code></li>
+<li><u>u 标签下划线</u>：
+<code>&lt;u&gt;u 标签下划线&lt;/u&gt;</code></li>
+<li><ins>ins 标签下划线</ins>：
+<code>&lt;ins&gt;ins 标签下划线&lt;/ins&gt;</code></li>
 </ul></li>
 </ul>
-<h2 id="3-footnotes">3. Footnotes</h2>
-<p>This is an example with a footnote<a href="#fn1" class="footnote-ref"
-id="fnref1" role="doc-noteref"><sup>1</sup></a>.</p>
-<h2 id="4-blockquotes">4. Blockquotes</h2>
+<h2 id="3-脚注">3. 脚注</h2>
+<p>这是一个带脚注的示例<a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>.</p>
+<h2 id="4-引用块">4. 引用块</h2>
 <blockquote>
-<p>This is a blockquote Can be used multiline</p>
+<p>这是一个引用块 可以多行使用</p>
 <blockquote>
-<p>Quote indentation</p>
+<p>引用缩进</p>
 </blockquote>
-<p>Ending line</p>
+<p>结束行</p>
 </blockquote>
-<h2 id="5-alerts-admonitions">5. Alerts (Admonitions)</h2>
-<p>Note:</p>
+<h2 id="5-警示块-alerts">5. 警示块 (Alerts)</h2>
+<p>Note 警示块：</p>
 <div class="note">
 <div class="title">
 <p>Note</p>
 </div>
-<p>This is a note alert</p>
+<p>这是一个 note 提示</p>
 </div>
-<p>Tip:</p>
+<p>Tip 警示块：</p>
 <div class="tip">
 <div class="title">
 <p>Tip</p>
 </div>
-<p>This is a tip alert</p>
+<p>这是一个 tip 提示</p>
 </div>
-<p>Important:</p>
+<p>Important 警示块：</p>
 <div class="important">
 <div class="title">
 <p>Important</p>
 </div>
-<p>This is an important alert</p>
+<p>这是一个 important 提示</p>
 </div>
-<p>Warning:</p>
+<p>Warning 警示块：</p>
 <div class="warning">
 <div class="title">
 <p>Warning</p>
 </div>
-<p>This is a warning alert</p>
+<p>这是一个 warning 提示</p>
 </div>
-<p>Caution:</p>
+<p>Caution 警示块：</p>
 <div class="caution">
 <div class="title">
 <p>Caution</p>
 </div>
-<p>This is a caution alert</p>
+<p>这是一个 caution 提示</p>
 </div>
-<h2 id="6-code-blocks">6. Code Blocks</h2>
-<h3 id="regular-code-block">Regular Code Block</h3>
-<p>Single line:</p>
+<h2 id="6-代码块">6. 代码块</h2>
+<h3 id="普通代码块">普通代码块</h3>
+<p>单行：</p>
 <pre><code>text = &quot;Code block&quot;</code></pre>
-<p>No syntax highlighting:</p>
+<p>不带语法高亮：</p>
 <pre><code>int main() {
     return 0;
 }</code></pre>
-<p>With syntax highlighting:</p>
+<p>带语法高亮：</p>
 <div class="sourceCode" id="cb3"><pre
 class="sourceCode python"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> pathlib <span class="im">import</span> Path</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> hello():</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Function comments</span></span>
 <span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">&quot;Hello, World!&quot;</span>)</span></code></pre></div>
-<h3 id="inline-code">Inline Code</h3>
-<p>A paragraph of text.</p>
-<p>Use <code>git status</code> command to check the status.</p>
-<p>Another paragraph of text.</p>
-<h2 id="7-links">7. Links</h2>
+<h3 id="行内代码">行内代码</h3>
+<p>一个文本段落。</p>
+<p>使用 <code>git status</code> 命令查看状态。</p>
+<p>另一个文本段落。</p>
+<h2 id="7-超链接">7. 超链接</h2>
 <ul>
 <li><a href="https://github.com">GitHub</a></li>
-<li>Auto link: <a href="https://github.com">https://github.com</a></li>
-<li>Link with title: <a href="https://github.com"
-title="Github homepage">Github</a></li>
-<li>Reference-style link: <a
-href="https://github.com/wklchris/markdown-css-for-pandoc">This
-repository</a></li>
+<li>自动链接：<a href="https://github.com">https://github.com</a></li>
+<li>带标题的链接：<a href="https://github.com"
+title="Github 主页">Github</a></li>
+<li>引用式超链接：<a
+href="https://github.com/wklchris/markdown-css-for-pandoc">本仓库</a></li>
 </ul>
-<h2 id="8-lists">8. Lists</h2>
-<h3 id="unordered-list">Unordered List</h3>
-<p>Test unordered list:</p>
+<h2 id="8-列表">8. 列表</h2>
+<h3 id="无序列表">无序列表</h3>
+<p>测试无序列表：</p>
 <ul>
-<li>Item 1</li>
-<li>Item 2
+<li>项目1</li>
+<li>项目2
 <ul>
-<li>Sub-item 2.1</li>
-<li>Sub-item 2.2</li>
+<li>子项目2.1</li>
+<li>子项目2.2</li>
 </ul></li>
-<li>Item 3</li>
+<li>项目3</li>
 </ul>
-<h3 id="ordered-list">Ordered List</h3>
-<p>Test ordered list:</p>
+<h3 id="有序列表">有序列表</h3>
+<p>测试有序列表：</p>
 <ol type="1">
-<li>First item</li>
-<li>Second item
+<li>第一项</li>
+<li>第二项
 <ol type="1">
-<li>Sub-item 2.1</li>
-<li>Sub-item 2.2</li>
+<li>子项2.1</li>
+<li>子项2.2</li>
 </ol></li>
-<li>Third item</li>
+<li>第三项</li>
 </ol>
-<p>Paragraph after ordered list.</p>
-<h3 id="task-list">Task List</h3>
-<p>Test task list:</p>
+<p>有序列表之后的段落。</p>
+<h3 id="任务列表">任务列表</h3>
+<p>测试任务列表：</p>
 <ul class="task-list">
-<li><label><input type="checkbox" checked="" />Complete
-document</label></li>
-<li><label><input type="checkbox" />Test features</label></li>
-<li><label><input type="checkbox" />Release version</label></li>
+<li><label><input type="checkbox" checked="" />完成文档</label></li>
+<li><label><input type="checkbox" />测试功能</label></li>
+<li><label><input type="checkbox" />发布版本</label></li>
 </ul>
-<p>Paragraph after task list.</p>
-<h2 id="9-figures">9. Figures</h2>
-<p>Test image:</p>
+<p>任务列表之后的段落。</p>
+<h2 id="9-图表">9. 图表</h2>
+<p>测试图片：</p>
 <p><img src="./example.png" alt="Test Image" /></p>
-<p>Test table:</p>
+<p>测试表格：</p>
 <table>
 <thead>
 <tr>
-<th style="text-align: left;">Left-aligned</th>
-<th style="text-align: center;">Centered</th>
-<th style="text-align: right;">Right-aligned</th>
+<th style="text-align: left;">左对齐</th>
+<th style="text-align: center;">居中</th>
+<th style="text-align: right;">右对齐</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align: left;">Data1</td>
-<td style="text-align: center;">Data2</td>
-<td style="text-align: right;">Data3</td>
+<td style="text-align: left;">数据1</td>
+<td style="text-align: center;">数据2</td>
+<td style="text-align: right;">数据3</td>
 </tr>
 <tr>
-<td style="text-align: left;">Data4</td>
-<td style="text-align: center;">Data5</td>
-<td style="text-align: right;">Data6</td>
+<td style="text-align: left;">数据4</td>
+<td style="text-align: center;">数据5</td>
+<td style="text-align: right;">数据6</td>
 </tr>
 </tbody>
 </table>
-<p>Paragraph after table.</p>
-<h2 id="10-mathematical-formulas">10. Mathematical Formulas</h2>
-<p>Inline formula: <span class="math inline">\(E=mc^2\)</span></p>
-<p>Block formula:</p>
+<p>表格之后的段落。</p>
+<h2 id="10-数学公式">10. 数学公式</h2>
+<p>行内公式： <span class="math inline">\(E=mc^2\)</span></p>
+<p>行间公式：</p>
 <p><span class="math display">\[
 A = \begin{pmatrix}
 1 &amp; 2 \\
 3 &amp; 4 \\
 \end{pmatrix}
 \]</span></p>
-<p>Another block formula:</p>
+<p>另一个行间公式：</p>
 <p><span class="math display">\[ a^2 + b^2 = c^2 \]</span></p>
-<p>Paragraph after formula.</p>
-<h2 id="11-misc">11. Misc</h2>
-<h3 id="collapsable-details">Collapsable
-<code>&lt;details&gt;</code></h3>
-<details><summary>Title: Click to expand/collapse and view details</summary>
-Here is the expanded detailed content.
+<p>公式之后的段落。</p>
+<h2 id="11-其他">11. 其他</h2>
+<h3 id="可折叠-details">可折叠 <code>&lt;details&gt;</code></h3>
+<details><summary>标题：单击以展开/隐藏并查看详细内容</summary>
+这里是展开后的详细内容。
 
 </details>
 
-<p>Paragraph after collapse syntax block.</p>
+<p>折叠语法块之后的段落。</p>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
 <hr />
 <ol>
-<li id="fn1"><p>This is the footnote content. GFM supports footnote
-syntax.<a href="#fnref1" class="footnote-back"
-role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>这是脚注内容。GFM支持脚注语法。<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 </body>

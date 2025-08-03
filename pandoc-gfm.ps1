@@ -65,7 +65,7 @@ if (-not (Test-Path $output_dir -PathType Container)) {
 
 # Run pandoc command
 try {
-    pandoc $input_file -s -c $gfm_css_path -f gfm --highlight-style $gfm_hl_theme_path --mathjax -o $output_file
+    pandoc $input_file -s -c $css_name -f gfm --highlight-style $gfm_hl_theme_path --mathjax -o $output_file
     if (-not $?) {
         Write-Error "Pandoc conversion failed"
         exit 1

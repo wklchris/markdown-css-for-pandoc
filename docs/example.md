@@ -1,5 +1,7 @@
 # GFM Test Document
 
+🌐 *English*, [中文](./example-cn.html)
+
 This document tests all supported GitHub-Flavored Markdown (GFM) syntax features and their rendering results in HTML for the [wklchris/markdown-css-for-pandoc][gfm-css] repository.
 
 This is an illustrative webpage but not a user guide. For the user guide, see [ReadMe in the repo](https://github.com/wklchris/markdown-css-for-pandoc#using-guide).
@@ -62,21 +64,27 @@ This is an example with a footnote[^note].
 
 ## 5. Alerts (Admonitions)
 
+Note:
+
 > [!NOTE]  
 > This is a note alert
+
+Tip:
 
 > [!TIP] 
 > This is a tip alert
 
----
+Important:
 
 > [!IMPORTANT]
 > This is an important alert
 
+Warning:
+
 > [!WARNING]
 > This is a warning alert
 
-***
+Caution:
 
 > [!CAUTION]
 > This is a caution alert
