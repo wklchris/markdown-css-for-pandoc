@@ -7,6 +7,8 @@ The author of this repository imitates the Github-flavor Markdown (GFM) format o
 Table of contents:
 - [Online Example](#online-example)
 - [Using Guide](#using-guide)
+  - [Installation:](#installation)
+  - [File conversion](#file-conversion)
 - [Known differences with the original GFM](#known-differences-with-the-original-gfm)
 - [License](#license)
 
@@ -18,12 +20,26 @@ A rendered HTML example is online at [the Example webpage of this repo](https://
 
 ## Using Guide
 
-Installation:
+### Installation:
 
 - Make sure that you have installed [Pandoc](https://github.com/jgm/pandoc/releases).
 - Download files [gfm.css](./gfm.css) and [gfm-hl.theme](./gfm-hl.theme) from this repository. 
 
-To convert Markdown to HTML:
+### File conversion
+
+(*Recommended*) For Windows user (or other OS users with Powershell), the repo provides a script [pandoc-gfm.ps1](./pandoc-gfm.ps1) for easier conversion command:
+
+```powershell
+./pandoc-gfm.ps1 path/to/input.md
+```
+
+It will generate the HTML in the same folder aside the input Markdown file, and automatically copy the `gfm.css` file along with the output HTML.
+
+Run `Get-Help ./pandoc-gfm.ps1` for a full list of arguments of the Powershell script.
+
+---
+
+Alternatively, if you don't want to run a powershell script, you can convert Markdown to HTML with plain Pandoc command (and manually copy the CSS file):
 
 1. **Pandoc command**: Run the following command in terminal to convert `input.md` to `output.html`:
 
