@@ -10,7 +10,9 @@ Table of contents:
 - [Online Example](#online-example)
 - [Using Guide](#using-guide)
   - [Installation:](#installation)
-  - [File conversion](#file-conversion)
+  - [File conversion: Normal User](#file-conversion-normal-user)
+  - [File conversion: Website Owner](#file-conversion-website-owner)
+  - [Non-powershell User](#non-powershell-user)
 - [Known differences with the original GFM](#known-differences-with-the-original-gfm)
 - [License](#license)
 
@@ -27,7 +29,7 @@ A rendered HTML example is online at [the Example webpage of this repo](https://
 - Make sure that you have installed [Pandoc](https://github.com/jgm/pandoc/releases).
 - Download files [gfm.css](./gfm.css) and [gfm-hl.theme](./gfm-hl.theme) from this repository. 
 
-### File conversion
+### File conversion: Normal User
 
 (*Recommended*) For Windows user (or other OS users with Powershell), the repo provides a script [pandoc-gfm.ps1](./pandoc-gfm.ps1) for easier conversion command:
 
@@ -35,19 +37,33 @@ A rendered HTML example is online at [the Example webpage of this repo](https://
 ./pandoc-gfm.ps1 path/to/input.md
 ```
 
-It will generate the HTML in the same folder aside the input Markdown file, and automatically copy the `gfm.css` file along with the output HTML.
+It will generate the HTML in the same folder of the input Markdown file, and automatically copy the `gfm.css` file along with the output HTML. The CSS will be directly included in the HTML as `<link rel="stylesheet" href="gfm.css" />`, assuming that it is in the same folder with the HTML.
 
 Run `Get-Help ./pandoc-gfm.ps1` for a full list of arguments of the Powershell script.
 
----
+### File conversion: Website Owner
+
+If you are a website owner, you may want to reserve the relative CSS path (pointing from the output HTML to a single, shared gfm.css file) and not copying the same CSS file everywhere.
+
+To achieve this, you can pass `-use_relpath_css` arg to enable the relative linking feature. For example, the webpages of this repo are rendered with:
+
+```powershell
+./pandoc-gfm.ps1 docs/*.md -css_dir docs/css -use_relpath_css
+```
+
+This will gives `<link rel="stylesheet" href="css/gfm.css" />` in the HTML. CSS file will be copied to the `-css_dir` folder rather than the HTML's output folder.
+
+### Non-powershell User
 
 Alternatively, if you don't want to run a powershell script, you can convert Markdown to HTML with plain Pandoc command (and manually copy the CSS file):
 
 1. **Pandoc command**: Run the following command in terminal to convert `input.md` to `output.html`:
 
-```
-pandoc input.md -s -c gfm.css -f gfm --highlight-style gfm-hl.theme --mathjax -o output.html 
-```
+   ```
+   pandoc input.md -s -c gfm.css -f gfm --highlight-style gfm-hl.theme --mathjax -o output.html 
+   ```
+
+   Note that the `-c` argument should be a relative path and Pandoc will insert it into the output HTML like: `<link rel="stylesheet" href="gfm.css" />`.
 
 2. **Copy the CSS file**: Keep the file `gfm.css` with your output HTML so that the styling can work.
 

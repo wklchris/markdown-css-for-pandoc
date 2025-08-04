@@ -10,7 +10,9 @@
 - [在线示例](#在线示例)
 - [使用指南](#使用指南)
   - [安装：](#安装)
-  - [文件转换](#文件转换)
+  - [文件转换：普通用户](#文件转换普通用户)
+  - [文件转换：网站用户](#文件转换网站用户)
+  - [非 Powershell 用户](#非-powershell-用户)
 - [与原始 GFM 的已知差异](#与原始-gfm-的已知差异)
 - [许可证](#许可证)
 
@@ -25,7 +27,7 @@
 - 确保已安装 [Pandoc](https://github.com/jgm/pandoc/releases)。
 - 从本仓库下载文件 [gfm.css](./gfm.css) 和 [gfm-hl.theme](./gfm-hl.theme)。
 
-### 文件转换
+### 文件转换：普通用户
 
 （推荐）对于 Windows 用户（或其他操作系统但使用 PowerShell的用户），本仓库提供了一个脚本 [pandoc-gfm.ps1](./pandoc-gfm.ps1)，用于简化转换命令：
 
@@ -33,19 +35,33 @@
 ./pandoc-gfm.ps1 path/to/input.md
 ```
 
-该命令将在同一目录下生成 HTML 文件，并自动将 `gfm.css` 文件一同复制到输出文件中。
+该命令将在同一目录下生成 HTML 文件，并自动将 `gfm.css` 文件一同复制到输出文件中。渲染得到的 HTML 文件将直接包含 CSS： `<link rel="stylesheet" href="gfm.css" />`，即默认 CSS 文件与 HTML 位于同一文件夹。
 
 运行 `Get-Help ./pandoc-gfm.ps1` 可获取 PowerShell 脚本的完整参数列表。
 
----
+### 文件转换：网站用户
+
+如果你是一个网站用户，你可能希望保留 CSS 文件的相对路径（从 HTML 输出文件夹指向一个共用的 gfm.css 文件），而不是将一份相同的 CSS 文件复制到每一个角落。
+
+为了实现这一任务，你可以传入参数 `-use_relpath_css` 来启用相对路径功能。例如，本仓库的网页是用以下命令渲染的：
+
+```powershell
+./pandoc-gfm.ps1 docs/*.md -css_dir docs/css -use_relpath_css
+```
+
+这将会在 HTML 文件中添加 `<link rel="stylesheet" href="css/gfm.css" />`。CSS 文件会被复制到 `-css_dir` 指定的路径，而不是 HTML 的输出文件夹.
+
+### 非 Powershell 用户
 
 或者，如果您不想运行 PowerShell 脚本，也可以使用原始 Pandoc 命令进行转换（需手动复制 CSS 文件）：
 
 1. **Pandoc 命令**：在终端中执行以下命令，将 `input.md` 转换为 `output.html`：
 
-```  
-pandoc input.md -s -c gfm.css -f gfm --highlight-style gfm-hl.theme --mathjax -o output.html 
-```
+   ```  
+   pandoc input.md -s -c gfm.css -f gfm --highlight-style gfm-hl.theme --mathjax -o output.html 
+   ```
+   
+   请注意 `-c` 参数需要传入一个相对路径。Pandoc 将把它插入到 HTML 输出中，就像 `<link rel="stylesheet" href="gfm.css" />`。
 
 2. **复制 CSS 文件**：请确保将文件 `gfm.css` 与您的输出 HTML 一同保留，以保证样式正常显示。
 
