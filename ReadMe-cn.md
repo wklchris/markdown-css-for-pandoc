@@ -18,7 +18,7 @@
 
 ## 在线示例
 
-在本仓库的[示例网页](https://wklchris.github.io/markdown-css-for-pandoc/example.html)中预览一个渲染后的 HTML 示例。该页面使用了类似下文[使用指南](#using-guide)中介绍的命令生成。
+在本仓库的[示例网页](https://wklchris.github.io/markdown-css-for-pandoc/example-cn.html)中预览一个渲染后的 HTML 示例。该页面使用了类似下文[使用指南](#using-guide)中介绍的命令生成。
 
 ## 使用指南
 

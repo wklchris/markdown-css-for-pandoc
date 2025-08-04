@@ -83,7 +83,7 @@ foreach ($file in $in_files) {
         if ([string]::IsNullOrEmpty($current_output)) {
             $current_output = [System.IO.Path]::ChangeExtension($current_input, "html")
         }
-        $current_output = (Resolve-Path $current_output).Path
+        $current_output = $ExecutionContext.SessionState.Path.GetUnresolvedProviderPathFromPSPath($current_output)
         
         # Ensure output folder exists
         $out_dir = Split-Path $current_output -Parent
